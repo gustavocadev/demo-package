@@ -1,4 +1,4 @@
-import { add, multiply, subtract } from './utils.ts';
+import { add, divide, multiply, subtract } from './utils.ts';
 import { test, expect } from 'bun:test';
 
 test('add', () => {
@@ -11,4 +11,8 @@ test('subtract', () => {
 
 test('multiply', () => {
   expect(multiply(2, 3)).toBe(6);
+});
+
+test('divide', () => {
+  expect(divide(6, 2)).toBe(3);
 });
