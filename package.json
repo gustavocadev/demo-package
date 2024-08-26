@@ -12,20 +12,33 @@
     "type": "git",
     "url": "git+https://github.com/gustavocadev/demo-package.git"
   },
-  "module": "src/index.ts",
+  "main": "dist/index.js",
   "type": "module",
   "files": ["dist"],
   "license": "MIT",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js"
+  },
   "scripts": {
-    "build": "bun build src/index.ts --outfile=dist/index.js",
-    "ci": "bun run build",
-    "format": "biome format --write ."
+    "build": "bun run build.ts",
+    "ci": "bun run build && bun run check-format && bun run check-exports && bun run lint && bun run test",
+    "test": "bun test",
+    "format": "biome format --write .",
+    "check-format": "biome format .",
+    "check-exports": "attw --pack  .",
+    "lint": "biome lint .",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "bun run ci"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.15.4",
     "@biomejs/biome": "^1.8.3",
-    "@types/bun": "latest"
+    "@changesets/cli": "^2.27.7",
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.2.3"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.5.4"
   }
 }
