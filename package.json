@@ -1,0 +1,31 @@
+{
+  "name": "@gcadev/demo-package",
+  "version": "1.0.0",
+  "description": "A demo package for learning purposes",
+  "keywords": ["demo", "package"],
+  "homepage": "https://github.com/gustavocadev/demo-package",
+  "bugs": {
+    "url": "https://github.com/gustavocadev/demo-package/issues"
+  },
+  "author": "Gustavo CA",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocadev/demo-package.git"
+  },
+  "module": "src/index.ts",
+  "type": "module",
+  "files": ["dist"],
+  "license": "MIT",
+  "scripts": {
+    "build": "bun build src/index.ts --outfile=dist/index.js",
+    "ci": "bun run build",
+    "format": "biome format --write ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
