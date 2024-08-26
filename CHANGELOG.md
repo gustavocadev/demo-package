@@ -1,5 +1,11 @@
 # @gcadev/demo-package
 
+## 1.3.1
+
+### Patch Changes
+
+- f5a65d6: Export functions oops ><
+
 ## 1.3.0
 
 ### Minor Changes
