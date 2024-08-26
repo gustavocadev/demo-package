@@ -1,1 +1,1 @@
-export { add } from './utils.ts';
+export { add, divide, multiply, subtract } from './utils.ts';
